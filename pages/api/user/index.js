@@ -19,9 +19,9 @@ if (process.env.CLOUDINARY_URL) {
   } = new URL(process.env.CLOUDINARY_URL);
 
   cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME || cloud_name,
-    api_key: process.env.CLOUDINARY_API_KEY || api_key,
-    api_secret: process.env.CLOUDINARY_API_SECRET || api_secret,
+    cloud_name,
+    api_key,
+    api_secret,
   });
 }
 
