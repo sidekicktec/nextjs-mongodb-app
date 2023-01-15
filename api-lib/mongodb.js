@@ -3,7 +3,7 @@ import { MongoClient } from 'mongodb';
 let indexesCreated = false;
 async function createIndexes(client) {
   if (indexesCreated) return client;
-  const db = client.db();
+  const db = client.db('vercel');
   await Promise.all([
     db
       .collection('tokens')
