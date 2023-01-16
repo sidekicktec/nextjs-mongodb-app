@@ -1,0 +1,43 @@
+.signature {
+  position: absolute;
+  height: fit-content;
+  color: var(--gray11);
+  pointer-events: none;
+}
+
+.signature {
+  width: 120px;
+  stroke-dashoffset: 1;
+  stroke-dasharray: 1;
+  left: -8px;
+}
+
+.footerText {
+  display: flex;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+}
+
+.footer[data-animate='true'] {
+  .signature path {
+    animation: drawSignature 0.8s linear forwards 0.5s;
+  }
+
+  .footerText {
+    animation: showFooter 1s linear forwards 3s;
+  }
+}
+
+@keyframes drawSignature {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes showFooter {
+  100% {
+    opacity: 1;
+  }
+}

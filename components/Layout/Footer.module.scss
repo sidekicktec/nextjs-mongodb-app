@@ -1,0 +1,74 @@
+.footer {
+  font-size: 0.875rem;
+  background: var(--accents-1);
+  border-top: 1px solid var(--accents-2);
+  padding: 2rem;
+  text-align: center;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--gray12);
+    font-weight: 500;
+    border-radius: 9999px;
+    padding: 4px;
+    margin: 0 -2px;
+    transition: background 150ms ease;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--grayA4);
+      outline: 0;
+    }
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--gray5);
+    border-radius: 9999px;
+  }
+}
+
+.signature {
+  height: fit-content;
+  margin-top: -110px;
+  color: #ff375d;
+  pointer-events: none;
+  width: 200px;
+  stroke-dashoffset: 1;
+  stroke-dasharray: 1;
+  stroke-width: 7;
+}
+
+.footerText {
+  display: flex;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  padding-top: 15px;
+}
+
+.footer[data-animate='true'] {
+  .signature path {
+    animation: drawSignature 2s linear forwards 0.5s;
+  }
+
+  .footerText {
+    animation: showFooter 1s linear forwards 3s;
+  }
+}
+
+@keyframes drawSignature {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes showFooter {
+  100% {
+    opacity: 1;
+  }
+}
